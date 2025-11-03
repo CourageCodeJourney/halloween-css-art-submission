@@ -88,4 +88,3 @@ None — this is **pure HTML + CSS**.
 No frameworks, JS libraries, or build steps required.
 
 ---
->>>>>>> 530c94e (Initial commit - Halloween CSS Art submission)
