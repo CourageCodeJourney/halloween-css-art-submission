@@ -1,0 +1,1209 @@
+/* NIGHTMARISH Halloween CSS Art - MAXIMUM HORROR */
+
+.halloween-scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(ellipse at center top, 
+    hsl(0, 0%, 1%) 0%, 
+    hsl(0, 0%, 0%) 100%);
+}
+
+/* Remove accidental body scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+
+/* Glitch Horror Effect */
+.glitch-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: horrorGlitch 8s infinite;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@keyframes horrorGlitch {
+  0%, 100% { 
+    background: transparent;
+    filter: none;
+  }
+  86% { 
+    background: transparent;
+  }
+  86.5% { 
+    background: rgba(255, 0, 0, 0.1);
+    transform: translate(10px, 0);
+  }
+  87% { 
+    background: rgba(0, 255, 0, 0.1);
+    transform: translate(-10px, 0);
+  }
+  87.5% { 
+    background: transparent;
+    transform: translate(0, 0);
+  }
+}
+
+/* Sky */
+.sky {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  background-image: 
+    radial-gradient(1px 1px at 20% 30%, rgba(255,0,0,0.2), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,0.1), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(255,0,0,0.2), transparent);
+  animation: bloodStars 5s ease-in-out infinite;
+}
+
+@keyframes bloodStars {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.05; }
+}
+
+/* Blood Moon with Demon Face */
+.blood-moon {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, hsl(0, 100%, 40%), hsl(0, 85%, 20%));
+  border-radius: 50%;
+  top: 8%;
+  right: 12%;
+  box-shadow: 
+    0 0 80px hsl(0, 100%, 50%),
+    0 0 150px hsl(0, 85%, 30%),
+    inset -30px -30px 60px rgba(0, 0, 0, 0.7);
+  animation: demonMoonPulse 2s ease-in-out infinite;
+}
+
+.demon-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+}
+
+.demon-face::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 40px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.9), transparent);
+  border-radius: 50%;
+  top: 60px;
+  left: 50px;
+  box-shadow: 70px 0 0 rgba(0, 0, 0, 0.9);
+}
+
+.demon-face::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-top: 40px solid rgba(0, 0, 0, 0.8);
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: blur(2px);
+}
+
+@keyframes demonMoonPulse {
+  0%, 100% { 
+    box-shadow: 0 0 80px hsl(0, 100%, 50%), 0 0 150px hsl(0, 85%, 30%), inset -30px -30px 60px rgba(0, 0, 0, 0.7);
+    transform: scale(1);
+  }
+  50% { 
+    box-shadow: 0 0 120px hsl(0, 100%, 50%), 0 0 200px hsl(0, 85%, 30%), inset -30px -30px 60px rgba(0, 0, 0, 0.5);
+    transform: scale(1.08);
+  }
+}
+
+/* Screaming Ghost Faces */
+.screaming-face {
+  position: absolute;
+  width: 100px;
+  height: 120px;
+  opacity: 0;
+  animation: screamAppear 12s ease-in-out infinite;
+  filter: blur(1px);
+}
+
+.screaming-face::before {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 100px;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.6), rgba(200, 255, 200, 0.2));
+  border-radius: 50% 50% 40% 40%;
+  box-shadow: 
+    inset 0 0 30px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(100, 255, 100, 0.5);
+}
+
+.screaming-face::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 50px;
+  background: radial-gradient(ellipse, rgba(0, 0, 0, 0.9), transparent);
+  border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.face-1 {
+  top: 20%;
+  left: 30%;
+  animation-delay: 0s;
+}
+
+.face-2 {
+  top: 35%;
+  right: 20%;
+  animation-delay: 4s;
+}
+
+.face-3 {
+  top: 45%;
+  left: 60%;
+  animation-delay: 8s;
+}
+
+@keyframes screamAppear {
+  0%, 100% { 
+    opacity: 0;
+    transform: scale(0.5) translateY(50px);
+  }
+  5%, 15% { 
+    opacity: 0.8;
+    transform: scale(1.2) translateY(0) rotate(-5deg);
+  }
+  10% {
+    transform: scale(1.3) translateY(-10px) rotate(5deg);
+  }
+  20% { 
+    opacity: 0;
+    transform: scale(0.8) translateY(-50px);
+  }
+}
+
+/* Lightning Effect - MORE INTENSE */
+.lightning {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  animation: intenseLightning 7s infinite;
+}
+
+@keyframes intenseLightning {
+  0%, 100% { background: transparent; }
+  32% { background: transparent; }
+  32.2% { background: rgba(255, 255, 255, 0.15); }
+  32.3% { background: transparent; }
+  32.5% { background: rgba(255, 255, 255, 0.25); }
+  32.6% { background: transparent; }
+  33% { background: rgba(255, 255, 255, 0.2); }
+  33.2% { background: transparent; }
+}
+
+/* Demon Eyes EVERYWHERE */
+.demon-eyes {
+  position: absolute;
+  width: 35px;
+  height: 10px;
+  animation: terrorEyeBlink 3s infinite;
+}
+
+.demon-eyes::before,
+.demon-eyes::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: radial-gradient(circle, hsl(0, 100%, 50%), hsl(0, 85%, 30%));
+  border-radius: 50%;
+  box-shadow: 
+    0 0 30px hsl(0, 100%, 50%),
+    0 0 50px hsl(0, 85%, 40%),
+    inset 0 0 8px rgba(0, 0, 0, 0.8);
+  animation: demonEyeGlow 1.5s ease-in-out infinite;
+}
+
+.demon-eyes::before { left: 0; }
+.demon-eyes::after { right: 0; }
+
+.eyes-1 { top: 25%; left: 8%; animation-delay: 0s; }
+.eyes-2 { top: 40%; left: 88%; animation-delay: 1s; }
+.eyes-3 { top: 20%; left: 72%; animation-delay: 2s; }
+.eyes-4 { top: 55%; left: 3%; animation-delay: 0.5s; }
+.eyes-5 { top: 30%; right: 3%; animation-delay: 2.5s; }
+.eyes-6 { top: 48%; left: 25%; animation-delay: 1.5s; }
+.eyes-7 { top: 35%; right: 30%; animation-delay: 3s; }
+.eyes-8 { top: 60%; left: 70%; animation-delay: 0.8s; }
+
+@keyframes terrorEyeBlink {
+  0%, 93%, 100% { opacity: 1; }
+  94%, 97% { opacity: 0; }
+}
+
+@keyframes demonEyeGlow {
+  0%, 100% { filter: brightness(1); transform: scaleY(1); }
+  50% { filter: brightness(2); transform: scaleY(1.2); }
+}
+
+/* Multiple Spiders CRAWLING */
+.spider {
+  position: absolute;
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 1));
+}
+
+.spider-1 {
+  top: 5%;
+  right: 18%;
+  animation: spider1Crawl 15s ease-in-out infinite;
+}
+
+.spider-2 {
+  top: 15%;
+  left: 25%;
+  animation: spider2Crawl 18s ease-in-out infinite;
+}
+
+.spider-3 {
+  bottom: 40%;
+  right: 35%;
+  animation: spider3Crawl 20s ease-in-out infinite;
+}
+
+@keyframes spider1Crawl {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(-50px, 80px) rotate(-20deg); }
+  50% { transform: translate(-20px, 150px) rotate(10deg); }
+  75% { transform: translate(30px, 100px) rotate(-10deg); }
+}
+
+@keyframes spider2Crawl {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  33% { transform: translate(80px, 60px) rotate(30deg); }
+  66% { transform: translate(40px, 120px) rotate(-20deg); }
+}
+
+@keyframes spider3Crawl {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-100px, -80px) rotate(45deg); }
+}
+
+.spider-body {
+  position: relative;
+  width: 55px;
+  height: 65px;
+  background: radial-gradient(ellipse, hsl(0, 0%, 3%), hsl(0, 0%, 0%));
+  border-radius: 50%;
+  border: 3px solid hsl(0, 0%, 8%);
+}
+
+.spider-body::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: radial-gradient(ellipse, hsl(0, 0%, 5%), hsl(0, 0%, 0%));
+  border-radius: 50%;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 3px solid hsl(0, 0%, 8%);
+}
+
+.spider-body::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: hsl(0, 100%, 45%);
+  border-radius: 50%;
+  top: -28px;
+  left: 12px;
+  box-shadow: 
+    16px 0 0 hsl(0, 100%, 45%),
+    0 0 15px hsl(0, 100%, 50%),
+    16px 0 15px hsl(0, 100%, 50%);
+}
+
+.spider-leg {
+  position: absolute;
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(to right, hsl(0, 0%, 8%), hsl(0, 0%, 3%));
+  transform-origin: right center;
+  animation: violentLegWiggle 1s ease-in-out infinite;
+}
+
+.leg-1 { top: 10px; left: -70px; transform: rotate(-35deg); --start: -35deg; }
+.leg-2 { top: 30px; left: -70px; transform: rotate(-15deg); --start: -15deg; animation-delay: 0.2s; }
+.leg-3 { top: 10px; right: -70px; transform: rotate(35deg); --start: 35deg; animation-delay: 0.4s; }
+.leg-4 { top: 30px; right: -70px; transform: rotate(15deg); --start: 15deg; animation-delay: 0.6s; }
+
+@keyframes violentLegWiggle {
+  0%, 100% { transform: rotate(var(--start)); }
+  50% { transform: rotate(calc(var(--start) + 20deg)); }
+}
+
+/* Spider Webs */
+.spider-web {
+  position: absolute;
+  width: 3px;
+  background: linear-gradient(to bottom, rgba(200, 200, 200, 0.4), rgba(200, 200, 200, 0.1));
+  transform-origin: top center;
+  animation: webDangle 4s ease-in-out infinite;
+}
+
+.web-1 {
+  top: 0;
+  right: 20%;
+  height: 250px;
+}
+
+.web-2 {
+  top: 0;
+  left: 27%;
+  height: 300px;
+  animation-delay: 2s;
+}
+
+@keyframes webDangle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+
+/* Bloody Handprints */
+.bloody-handprint {
+  position: absolute;
+  width: 60px;
+  height: 80px;
+  opacity: 0.6;
+  animation: bloodFade 4s ease-in-out infinite;
+}
+
+.bloody-handprint::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 60px;
+  background: radial-gradient(ellipse, hsl(0, 85%, 25%), transparent);
+  border-radius: 50% 50% 40% 40%;
+  filter: blur(2px);
+}
+
+.bloody-handprint::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 30px;
+  background: hsl(0, 85%, 25%);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(-10deg);
+  border-radius: 50%;
+  filter: blur(1px);
+  box-shadow: 
+    -12px -5px 0 -2px hsl(0, 85%, 25%),
+    -8px -3px 0 -3px hsl(0, 85%, 25%),
+    12px -5px 0 -2px hsl(0, 85%, 25%),
+    8px -3px 0 -3px hsl(0, 85%, 25%);
+}
+
+.hand-1 {
+  top: 35%;
+  left: 15%;
+  transform: rotate(-20deg);
+}
+
+.hand-2 {
+  top: 28%;
+  right: 25%;
+  transform: rotate(30deg) scaleX(-1);
+  animation-delay: 2s;
+}
+
+.hand-3 {
+  bottom: 35%;
+  left: 40%;
+  transform: rotate(-45deg);
+  animation-delay: 1s;
+}
+
+@keyframes bloodFade {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 0.3; }
+}
+
+/* Swarm of Bats - MORE */
+.bat {
+  position: absolute;
+  width: 55px;
+  height: 22px;
+  background: hsl(0, 0%, 0%);
+  animation: chaoticFly 10s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 1));
+}
+
+.bat::before,
+.bat::after {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 28px;
+  background: hsl(0, 0%, 0%);
+  border-radius: 50% 50% 0 0;
+  animation: violentFlap 0.25s ease-in-out infinite;
+}
+
+.bat::before { left: -28px; transform-origin: right bottom; }
+.bat::after { right: -28px; transform-origin: left bottom; }
+
+.bat-1 { left: -60px; animation-duration: 8s; top: 12%; }
+.bat-2 { left: -60px; animation-duration: 9s; animation-delay: 1.5s; top: 22%; }
+.bat-3 { left: -60px; animation-duration: 7s; animation-delay: 3s; top: 17%; }
+.bat-4 { left: -60px; animation-duration: 10s; animation-delay: 0.5s; top: 25%; }
+.bat-5 { left: -60px; animation-duration: 8.5s; animation-delay: 4s; top: 14%; }
+.bat-6 { left: -60px; animation-duration: 9.5s; animation-delay: 2s; top: 19%; }
+.bat-7 { left: -60px; animation-duration: 7.5s; animation-delay: 5s; top: 23%; }
+.bat-8 { left: -60px; animation-duration: 11s; animation-delay: 2.5s; top: 16%; }
+
+@keyframes chaoticFly {
+  0% { left: -60px; transform: translateY(0) rotate(0deg); }
+  15% { transform: translateY(-40px) rotate(-10deg); }
+  30% { transform: translateY(30px) rotate(10deg); }
+  45% { transform: translateY(-25px) rotate(-5deg); }
+  60% { transform: translateY(35px) rotate(8deg); }
+  75% { transform: translateY(-30px) rotate(-8deg); }
+  100% { left: calc(100% + 60px); transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes violentFlap {
+  0%, 100% { transform: rotateX(0deg); }
+  50% { transform: rotateX(-50deg); }
+}
+
+/* Cursed House - MORE DAMAGED */
+.haunted-house {
+  position: absolute;
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: drop-shadow(-20px 20px 40px rgba(0, 0, 0, 1));
+  animation: violentShudder 3s ease-in-out infinite;
+}
+
+@keyframes violentShudder {
+  0%, 100% { transform: translateX(-50%) rotate(0deg); }
+  10% { transform: translateX(-50%) rotate(1deg); }
+  20% { transform: translateX(-50%) rotate(-0.5deg); }
+  30% { transform: translateX(-50%) rotate(1.5deg); }
+  40% { transform: translateX(-50%) rotate(-1deg); }
+  50% { transform: translateX(-50%) rotate(0.8deg); }
+}
+
+.house-main {
+  position: relative;
+  width: 200px;
+  height: 180px;
+  background: linear-gradient(135deg, hsl(0, 0%, 1%), hsl(0, 0%, 0%));
+  border: 3px solid hsl(0, 0%, 3%);
+}
+
+.house-roof {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 110px solid transparent;
+  border-right: 110px solid transparent;
+  border-bottom: 80px solid hsl(0, 0%, 1%);
+  top: -80px;
+  left: -10px;
+}
+
+.house-tower {
+  position: absolute;
+  width: 70px;
+  height: 120px;
+  background: linear-gradient(135deg, hsl(0, 0%, 1%), hsl(0, 0%, 0%));
+  border: 3px solid hsl(0, 0%, 3%);
+  right: -80px;
+  top: -20px;
+}
+
+.tower-roof {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 38px solid transparent;
+  border-right: 38px solid transparent;
+  border-bottom: 60px solid hsl(0, 0%, 1%);
+  right: -83px;
+  top: -80px;
+}
+
+/* Windows with Silhouettes */
+.window {
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: hsl(0, 100%, 25%);
+  box-shadow: 
+    inset 0 0 30px hsl(0, 100%, 40%),
+    0 0 40px hsl(0, 100%, 40%),
+    0 0 80px hsl(0, 85%, 30%);
+  animation: terrorWindow 1.5s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.silhouette {
+  position: absolute;
+  width: 25px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 50% 50% 0 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: silhouetteMove 3s ease-in-out infinite;
+}
+
+.silhouette::before {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: hsl(0, 100%, 50%);
+  border-radius: 50%;
+  top: 8px;
+  left: 5px;
+  box-shadow: 10px 0 0 hsl(0, 100%, 50%);
+}
+
+@keyframes silhouetteMove {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.2); }
+}
+
+.window-1 { top: 40px; left: 30px; }
+.window-2 { top: 40px; right: 30px; animation-delay: 0.5s; }
+.window-3 { top: 30px; right: -65px; animation-delay: 1s; }
+
+@keyframes terrorWindow {
+  0%, 100% { 
+    opacity: 1;
+    box-shadow: inset 0 0 30px hsl(0, 100%, 40%), 0 0 40px hsl(0, 100%, 40%), 0 0 80px hsl(0, 85%, 30%);
+  }
+  50% { 
+    opacity: 0.4;
+    box-shadow: inset 0 0 15px hsl(0, 100%, 40%), 0 0 20px hsl(0, 100%, 40%), 0 0 40px hsl(0, 85%, 30%);
+  }
+}
+
+.door {
+  position: absolute;
+  width: 50px;
+  height: 80px;
+  background: hsl(0, 0%, 0%);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid hsl(0, 0%, 3%);
+  border-bottom: none;
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 1);
+}
+
+/* More Blood Drips */
+.blood-drip {
+  position: absolute;
+  width: 10px;
+  height: 0;
+  background: hsl(0, 90%, 30%);
+  animation: heavyBloodDrip 2.5s ease-in-out infinite;
+  border-radius: 0 0 50% 50%;
+  box-shadow: 0 0 15px hsl(0, 100%, 40%);
+}
+
+.drip-1 { top: 50px; left: 50px; }
+.drip-2 { top: 60px; right: 30px; animation-delay: 0.8s; }
+.drip-3 { top: 70px; left: 120px; animation-delay: 1.6s; }
+.drip-4 { top: 40px; right: 60px; animation-delay: 0.4s; }
+
+@keyframes heavyBloodDrip {
+  0% { height: 0; }
+  50% { height: 60px; }
+  100% { height: 0; transform: translateY(60px); }
+}
+
+/* House Cracks */
+.cracks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: 
+    linear-gradient(45deg, transparent 48%, rgba(100, 0, 0, 0.3) 48%, rgba(100, 0, 0, 0.3) 52%, transparent 52%),
+    linear-gradient(-45deg, transparent 48%, rgba(80, 0, 0, 0.3) 48%, rgba(80, 0, 0, 0.3) 52%, transparent 52%);
+  background-size: 20px 100px, 30px 80px;
+  background-position: 30px 20px, 120px 40px;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+}
+
+/* Dead Trees */
+.tree {
+  position: absolute;
+  bottom: 22%;
+  width: 45px;
+  height: 240px;
+  background: linear-gradient(to top, hsl(0, 0%, 1%), hsl(0, 0%, 5%));
+  animation: violentTreeSway 2.5s ease-in-out infinite;
+  transform-origin: bottom center;
+  filter: drop-shadow(-15px 15px 20px rgba(0, 0, 0, 1));
+}
+
+.tree::before,
+.tree::after {
+  content: '';
+  position: absolute;
+  background: hsl(0, 0%, 3%);
+}
+
+.tree::before {
+  width: 35px;
+  height: 100px;
+  top: 35px;
+  left: -32px;
+  border-radius: 50% 0 0 50%;
+  animation: violentBranchSway 2s ease-in-out infinite;
+  transform-origin: bottom right;
+}
+
+.tree::after {
+  width: 35px;
+  height: 100px;
+  top: 35px;
+  right: -32px;
+  border-radius: 0 50% 50% 0;
+  animation: violentBranchSway 2.3s ease-in-out infinite reverse;
+  transform-origin: bottom left;
+}
+
+.tree-left { left: 13%; }
+.tree-right { right: 13%; animation-delay: 1s; }
+
+@keyframes violentTreeSway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+@keyframes violentBranchSway {
+  0%, 100% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+}
+
+/* Sinister Pumpkins */
+.pumpkin {
+  position: absolute;
+  width: 95px;
+  height: 85px;
+  background: radial-gradient(ellipse at center, hsl(25, 100%, 45%), hsl(10, 100%, 25%));
+  border-radius: 50%;
+  bottom: 20%;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 1));
+  animation: demonicGlow 1.2s ease-in-out infinite;
+}
+
+.pumpkin::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 28px;
+  background: hsl(120, 25%, 15%);
+  border-radius: 50% 50% 0 0;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%) rotate(10deg);
+}
+
+.pumpkin-face::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 18px solid hsl(35, 100%, 50%);
+  left: 18px;
+  top: 20px;
+  filter: drop-shadow(0 0 15px hsl(35, 100%, 50%));
+  box-shadow: 
+    35px 0 0 hsl(35, 100%, 50%),
+    0 0 30px hsl(35, 100%, 50%),
+    35px 0 30px hsl(35, 100%, 50%);
+  animation: demonicEyeFlash 1.2s ease-in-out infinite;
+}
+
+.pumpkin-face::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 20px;
+  border: 5px solid hsl(35, 100%, 50%);
+  border-radius: 0 0 20px 20px;
+  border-top: none;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 
+    inset 0 -8px 15px hsl(35, 100%, 50%),
+    0 0 30px hsl(35, 100%, 50%);
+  animation: demonicEyeFlash 1.2s ease-in-out infinite;
+}
+
+@keyframes demonicGlow {
+  0%, 100% { 
+    box-shadow: 0 0 40px hsl(35, 100%, 45%), 0 0 70px hsl(25, 100%, 40%);
+    filter: brightness(1) drop-shadow(0 10px 20px rgba(0, 0, 0, 1));
+  }
+  50% { 
+    box-shadow: 0 0 60px hsl(35, 100%, 45%), 0 0 100px hsl(25, 100%, 40%);
+    filter: brightness(1.3) drop-shadow(0 10px 20px rgba(0, 0, 0, 1));
+  }
+}
+
+@keyframes demonicEyeFlash {
+  0%, 100% { filter: brightness(1) drop-shadow(0 0 15px hsl(35, 100%, 50%)); }
+  50% { filter: brightness(2) drop-shadow(0 0 25px hsl(35, 100%, 50%)); }
+}
+
+.pumpkin-1 { left: 29%; }
+.pumpkin-2 { left: 57%; animation-delay: 0.4s; transform: scale(0.9); }
+.pumpkin-3 { left: 42%; animation-delay: 0.8s; transform: scale(1.1); }
+
+/* Possessed Ghosts */
+.ghost {
+  position: absolute;
+  width: 75px;
+  height: 95px;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, 0.85), rgba(150, 255, 150, 0.6));
+  border-radius: 50% 50% 0 0;
+  animation: possessedFloat 2.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 40px hsl(120, 100%, 35%));
+  opacity: 0.95;
+}
+
+.ghost::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: hsl(0, 0%, 0%);
+  border-radius: 50%;
+  top: 30px;
+  left: 14px;
+  box-shadow: 28px 0 0 hsl(0, 0%, 0%);
+  animation: ghostEyeShake 0.5s ease-in-out infinite;
+}
+
+.ghost::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  width: 100%;
+  height: 28px;
+  background: 
+    radial-gradient(circle at 15px 0, transparent 15px, rgba(255, 255, 255, 0.85) 15px),
+    radial-gradient(circle at 60px 0, transparent 15px, rgba(255, 255, 255, 0.85) 15px);
+  background-size: 30px 28px;
+  background-repeat: no-repeat;
+}
+
+@keyframes ghostEyeShake {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+
+.ghost-1 { top: 26%; left: 16%; animation-duration: 3s; }
+.ghost-2 { top: 30%; right: 20%; animation-delay: 1s; animation-duration: 3.5s; }
+.ghost-3 { top: 38%; left: 68%; animation-delay: 2s; animation-duration: 2.8s; }
+.ghost-4 { top: 48%; right: 12%; animation-delay: 1.5s; animation-duration: 3.2s; }
+
+@keyframes possessedFloat {
+  0%, 100% { 
+    transform: translateY(0) translateX(0) scale(1) rotate(0deg);
+  }
+  25% { 
+    transform: translateY(-30px) translateX(20px) scale(1.1) rotate(-8deg);
+  }
+  50% { 
+    transform: translateY(-15px) translateX(35px) scale(0.9) rotate(5deg);
+  }
+  75% { 
+    transform: translateY(-30px) translateX(20px) scale(1.1) rotate(-8deg);
+  }
+}
+
+/* Skeletons Emerging */
+.skeleton {
+  position: absolute;
+  width: 50px;
+  height: 120px;
+  bottom: 18%;
+  animation: skeletonRise 8s ease-in-out infinite;
+}
+
+.skeleton::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 50px;
+  background: linear-gradient(to bottom, hsl(0, 0%, 85%), hsl(0, 0%, 65%));
+  border-radius: 50% 50% 45% 45%;
+  top: 0;
+  left: 5px;
+  box-shadow: 
+    inset 0 -10px 15px rgba(0, 0, 0, 0.4),
+    0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 70px;
+  background: linear-gradient(to bottom, hsl(0, 0%, 80%), hsl(0, 0%, 60%));
+  border-radius: 15px;
+  bottom: 0;
+  left: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+}
+
+.skeleton-1 {
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.skeleton-2 {
+  right: 22%;
+  animation-delay: 5s;
+}
+
+@keyframes skeletonRise {
+  0%, 100% { transform: translateY(120px) rotate(0deg); opacity: 0; }
+  40%, 60% { transform: translateY(0) rotate(-5deg); opacity: 1; }
+}
+
+/* Graveyard */
+.graveyard {
+  position: absolute;
+  bottom: 18%;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+.tombstone {
+  position: absolute;
+  width: 48px;
+  height: 75px;
+  background: linear-gradient(to bottom, hsl(0, 0%, 10%), hsl(0, 0%, 5%));
+  border-radius: 24px 24px 0 0;
+  bottom: 0;
+  filter: drop-shadow(-10px 10px 15px rgba(0, 0, 0, 1));
+  animation: violentTombstoneShake 4s ease-in-out infinite;
+}
+
+.tombstone::before {
+  content: 'RIP';
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: hsl(0, 0%, 25%);
+  font-size: 15px;
+  font-weight: bold;
+  font-family: serif;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
+}
+
+@keyframes violentTombstoneShake {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg) translateY(-2px); }
+  50% { transform: rotate(2deg) translateY(0); }
+  75% { transform: rotate(-1deg) translateY(-1px); }
+}
+
+.tombstone-1 { left: 8%; animation-delay: 2s; }
+.tombstone-2 { left: 22%; animation-delay: 2.5s; }
+.tombstone-3 { right: 22%; animation-delay: 3s; }
+.tombstone-4 { right: 8%; animation-delay: 3.5s; }
+.tombstone-5 { left: 50%; transform: translateX(-50%); animation-delay: 2.8s; }
+
+/* Multiple Rising Hands */
+.rising-hand {
+  position: absolute;
+  bottom: 0;
+  width: 45px;
+  height: 70px;
+}
+
+.rising-hand::before {
+  content: '';
+  position: absolute;
+  width: 35px;
+  height: 55px;
+  background: linear-gradient(to bottom, hsl(120, 15%, 22%), hsl(120, 10%, 12%));
+  border-radius: 18px 18px 6px 6px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: inset -5px -5px 10px rgba(0, 0, 0, 0.6);
+}
+
+.rising-hand::after {
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 28px;
+  background: linear-gradient(to bottom, hsl(120, 15%, 20%), hsl(120, 10%, 10%));
+  border-radius: 10px 10px 4px 4px;
+  top: 8px;
+  left: 0;
+  transform: rotate(-25deg);
+  box-shadow: inset -3px -3px 6px rgba(0, 0, 0, 0.6);
+}
+
+.hand-rise-1 {
+  left: 35%;
+  animation: handClawing 5s ease-in-out infinite;
+}
+
+.hand-rise-2 {
+  left: 65%;
+  animation: handClawing 5s ease-in-out infinite 1.5s;
+}
+
+.hand-rise-3 {
+  left: 50%;
+  animation: handClawing 5s ease-in-out infinite 3s;
+}
+
+@keyframes handClawing {
+  0%, 100% { transform: translateY(70px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(-10deg); }
+}
+
+/* Crawling Hands */
+.crawling-hand {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  bottom: 18%;
+  animation: handCrawl 12s linear infinite;
+}
+
+.crawling-hand::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 35px;
+  background: linear-gradient(135deg, hsl(120, 15%, 20%), hsl(120, 10%, 10%));
+  border-radius: 50% 50% 30% 30%;
+  box-shadow: 
+    -8px 8px 0 -5px hsl(120, 15%, 18%),
+    -15px 12px 0 -7px hsl(120, 15%, 16%),
+    8px 8px 0 -5px hsl(120, 15%, 18%),
+    15px 12px 0 -7px hsl(120, 15%, 16%);
+  animation: handWiggle 0.5s ease-in-out infinite;
+}
+
+.crawl-1 {
+  left: -60px;
+}
+
+.crawl-2 {
+  left: -60px;
+  animation-delay: 6s;
+}
+
+@keyframes handCrawl {
+  0% { left: -60px; }
+  100% { left: calc(100% + 60px); }
+}
+
+@keyframes handWiggle {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+
+/* Ground */
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to bottom, hsl(0, 0%, 2%), hsl(0, 0%, 0%));
+  box-shadow: inset 0 30px 60px rgba(0, 0, 0, 1);
+}
+
+/* Toxic Fog */
+.fog {
+  position: absolute;
+  bottom: 0;
+  width: 200%;
+  height: 38%;
+  background: linear-gradient(to top, 
+    hsla(0, 100%, 15%, 0.25), 
+    transparent);
+  animation: toxicFogCrawl 20s linear infinite;
+  opacity: 0.7;
+}
+
+.fog-1 { left: 0; }
+.fog-2 { left: 0; animation-duration: 25s; animation-direction: reverse; opacity: 0.5; }
+
+@keyframes toxicFogCrawl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Multiple Shadow Figures */
+.shadow-figure {
+  position: absolute;
+  bottom: 20%;
+  width: 120px;
+  height: 220px;
+  background: linear-gradient(to top, hsl(0, 0%, 0%), transparent);
+  opacity: 0;
+  filter: blur(4px);
+}
+
+.figure-1 {
+  left: -150px;
+  animation: shadowStalk 18s ease-in-out infinite;
+}
+
+.figure-2 {
+  right: -150px;
+  animation: shadowStalk 20s ease-in-out infinite 8s;
+}
+
+.shadow-figure::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 70px;
+  background: hsl(0, 0%, 0%);
+  border-radius: 50% 50% 0 0;
+  top: 0;
+  left: 35px;
+}
+
+.shadow-figure::after {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: hsl(0, 100%, 45%);
+  border-radius: 50%;
+  top: 25px;
+  left: 45px;
+  box-shadow: 
+    20px 0 0 hsl(0, 100%, 45%),
+    0 0 20px hsl(0, 100%, 50%);
+  animation: shadowEyeGlow 1s ease-in-out infinite;
+}
+
+@keyframes shadowStalk {
+  0%, 100% { left: -150px; opacity: 0; }
+  45%, 55% { left: 18%; opacity: 0.85; }
+}
+
+@keyframes shadowEyeGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(2); }
+}
+
+/* Blood Splatters */
+.blood-splatter {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  opacity: 0.4;
+}
+
+.blood-splatter::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, hsl(0, 85%, 20%), transparent 70%);
+  filter: blur(3px);
+}
+
+.blood-splatter::after {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: hsl(0, 85%, 20%);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    -40px -20px 0 -10px hsl(0, 85%, 20%),
+    30px -30px 0 -15px hsl(0, 85%, 20%),
+    -20px 40px 0 -12px hsl(0, 85%, 20%),
+    45px 25px 0 -8px hsl(0, 85%, 20%);
+  filter: blur(2px);
+}
+
+.splatter-1 {
+  top: 30%;
+  left: 50%;
+  transform: rotate(45deg);
+}
+
+.splatter-2 {
+  bottom: 35%;
+  right: 15%;
+  transform: rotate(-30deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .haunted-house { transform: translateX(-50%) scale(0.65); }
+  .tree { height: 180px; }
+  .blood-moon { width: 140px; height: 140px; }
+  .pumpkin { width: 70px; height: 60px; }
+  .spider { transform: scale(0.6); }
+  .ghost { width: 60px; height: 75px; }
+  .screaming-face { display: none; }
+}
